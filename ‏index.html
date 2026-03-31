@@ -1,1 +1,12 @@
-<input type="text" id="r_phone" class="input-box" placeholder="رقم الهاتف (مدار/لبيانا)">
+// في ملف index.html، تأكد أن طلب الـ fetch يذهب للمسار المحلي للسيرفر
+const response = await fetch('/api/pulse/register', { 
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({
+        full_name: document.getElementById('r_name').value,
+        project_name: document.getElementById('r_project').value,
+        phone_number: document.getElementById('r_phone').value,
+        email: "user@example.com" // يمكنك إضافة خانة للإيميل لاحقاً
+    })
+});
+
